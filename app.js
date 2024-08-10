@@ -16,7 +16,6 @@ async function checkWeather(city) {
       let data = await response.json();
       showDetails(data);
       additionalDetails(data);
-      changeImage(city, data)
       showDate();
       searchBar.innerHTML = "";
       console.log(data)
@@ -53,29 +52,6 @@ function additionalDetails(data) {
   visibility.textContent = `Visibility: ${data.visibility} m`
   clouds.textContent = `Clouds: ${data.clouds.all}`
 }
-
-// changing image according to the city 
-function changeImage(city, data) {
-  let cityImage;
-  let dataTemp = data.main.temp
-  if (dataTemp < 10) {
-    cityImage = "url('https://source.unsplash.com/1500x900/?snow')"
-
-  } else if (dataTemp >= 10 && dataTemp < 20) {
-    cityImage = "url('https://source.unsplash.com/1500x900/?rain')"
-  } else if (dataTemp > 20 && dataTemp < 25) {
-    cityImage = "url('https://source.unsplash.com/1500x900/?wind')"
-
-  } else if (dataTemp > 25 && dataTemp < 30) {
-    cityImage = "url('https://source.unsplash.com/1500x900/?sunny')"
-
-  } else {
-    cityImage = "url('https://source.unsplash.com/1500x900/?air-pollution')"
-
-  }
-  document.body.style.backgroundImage = cityImage;
-}
-
 
 //event listener on the search icon
 searchBtn.addEventListener("click", () => {

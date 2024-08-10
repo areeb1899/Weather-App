@@ -15,11 +15,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     flex-direction: column;
+    background-image: url('./pexels-rpnickson-2775196.jpg');
 
 }
 
 .container {
-    /* border: 2px solid black; */
     padding: 10px;
     width: 550px;
     background-color: rgb(28, 28, 28, 0.4);
